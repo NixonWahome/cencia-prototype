@@ -1,0 +1,37 @@
+{
+  "default_credentials": {
+    "title": "Default credentials active",
+    "severity": "critical",
+    "remediation": "Rotate credentials immediately and enforce unique per-device passwords stored in a vault."
+  },
+  "modbus_no_auth": {
+    "title": "Modbus TCP (502) exposed without auth",
+    "severity": "high",
+    "remediation": "Restrict Modbus to the OT VLAN, apply a firewall allowlist for SCADA hosts only, and require VPN for remote access."
+  },
+  "telnet_open": {
+    "title": "Telnet (23) open",
+    "severity": "high",
+    "remediation": "Disable Telnet and use SSH with key-based authentication."
+  },
+  "mqtt_anonymous": {
+    "title": "MQTT broker allows anonymous clients",
+    "severity": "high",
+    "remediation": "Require client authentication (certificates or credentials) and enable TLS on the broker."
+  },
+  "http_no_tls": {
+    "title": "Web management over HTTP (no TLS)",
+    "severity": "medium",
+    "remediation": "Enable HTTPS with a valid certificate and disable the plain-HTTP management interface."
+  },
+  "snmp_public": {
+    "title": "SNMP v1/v2 with 'public' community",
+    "severity": "medium",
+    "remediation": "Migrate to SNMPv3 with authentication and encryption; remove default community strings."
+  },
+  "outdated_firmware": {
+    "title": "Outdated firmware",
+    "severity": "medium",
+    "remediation": "Schedule the vendor firmware update in the next maintenance window and verify the image signature."
+  }
+}

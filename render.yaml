@@ -1,0 +1,13 @@
+# Render Blueprint: New > Blueprint > point at this repo.
+# The free plan sleeps after ~15 min idle (first visit then takes ~1 min to wake).
+# Switch `plan` to starter before the presentation so it stays warm.
+services:
+  - type: web
+    name: cencia-demo
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: CENCIA_SIM_SPEED
+        value: "60"

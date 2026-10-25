@@ -8,7 +8,7 @@ const TONE: Record<Toast["tone"], { bar: string; icon: string }> = {
   critical: { bar: "bg-sev-critical", icon: "▲" },
   high: { bar: "bg-sev-high", icon: "◆" },
   medium: { bar: "bg-sev-medium", icon: "●" },
-  info: { bar: "bg-accent", icon: "⚡" },
+  info: { bar: "bg-accent", icon: "●" },
   good: { bar: "bg-sev-good", icon: "✓" },
 };
 

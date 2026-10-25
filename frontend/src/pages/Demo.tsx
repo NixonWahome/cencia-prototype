@@ -6,15 +6,6 @@ import type { Alert, AttackRun, AttackSpec, SimStatus } from "../api/types";
 import { Button, Card, PageHeader, Pill, SeverityBadge, cx } from "../components/ui";
 import { SITE_SHORT, fmtSeconds, hhmm } from "../lib/format";
 
-const ICON: Record<string, string> = {
-  spoof_night_generation: "🌙",
-  inflate_output: "📈",
-  unauthorized_shutdown: "⛔",
-  command_flood: "🌊",
-  tamper_stored_record: "✎",
-  device_offline: "📡",
-};
-
 // The order follows the demo script.
 const SCRIPT_ORDER = ["unauthorized_shutdown", "inflate_output", "tamper_stored_record", "spoof_night_generation", "command_flood", "device_offline"];
 
@@ -46,7 +37,7 @@ export default function Demo() {
         subtitle="Open this page on a phone to fire attacks while the dashboard is on the projector."
         actions={
           <Button variant="danger" size="lg" disabled={busy !== null} onClick={() => call("reset", () => api.post("/api/demo/reset"))}>
-            {busy === "reset" ? "Resetting…" : "↺ Reset demo"}
+            {busy === "reset" ? "Resetting…" : "Reset demo"}
           </Button>
         }
       />
@@ -55,7 +46,7 @@ export default function Demo() {
         {catalog.map((a) => (
           <div key={a.type} className={cx("flex flex-col rounded-xl border bg-white p-4 shadow-card", active.has(a.type) ? "border-sev-critical ring-2 ring-sev-critical/20" : "border-line")}>
             <div className="flex items-start justify-between gap-2">
-              <h3 className="text-base font-semibold"><span aria-hidden className="mr-1.5">{ICON[a.type]}</span>{a.label}</h3>
+              <h3 className="text-base font-semibold">{a.label}</h3>
               {active.has(a.type) && <Pill tone="bad">active</Pill>}
             </div>
             <p className="mt-1 flex-1 text-sm text-ink-muted">{a.story}</p>

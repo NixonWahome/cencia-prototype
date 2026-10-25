@@ -70,7 +70,7 @@ export function Layout() {
           to="/demo"
           className="fixed bottom-5 right-5 z-30 flex items-center gap-2 rounded-full bg-accent px-4 py-3 text-sm font-semibold text-white shadow-lg hover:bg-accent-700 print:hidden"
         >
-          <span aria-hidden>⚡</span> Demo panel
+          Demo panel
         </Link>
       )}
       <Toasts />
